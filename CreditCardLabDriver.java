@@ -14,19 +14,18 @@ public class CreditCardLabDriver
     while(!done){
       System.out.println("Enter a number to be tested");
       String num1 = in.next();
-       if (num1.length() > 16 || num1.length() < 12) done = true;
+      if (num1.length() > 16 || num1.length() < 12) done = true;
       String num = "";
       for (int i = num1.length() -1; i >=0; i--){
         num = num + num1.charAt(i);
       }
-
-      System.out.println("is "+num1+" a valid credit card number? "+ test.verify(num));
+      System.out.println("Is "+num1+" a valid number? "+ test.verify(num));
       int typeInt = test.findType(num1);
-      System.out.println(typeInt);
       String[] types = {"none", "Master Card", "Visa", "American Express", "Discover", "Diners Club/ Carte Blanche"};
 
       System.out.println("Credit card type is: "+ types[typeInt]);
       System.out.println();
+      done = true;
     }
   }
 }
